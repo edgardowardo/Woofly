@@ -7,6 +7,8 @@ class BreedsListViewModel: ObservableObject {
     @Published var vms: [BreedItemViewModel] = []
     @Published var isLoading: Bool = false
 
+    var detailVms: [String: BreedDetailViewModel] = [:]
+
     private var api: DogAPIProviding
     
     init(api: DogAPIProviding = DogAPI()) {
@@ -24,7 +26,11 @@ class BreedsListViewModel: ObservableObject {
             // TODO: throw error
         }
     }
-    
+
+    func breedDetailViewModelFor(_ breed: DogBreed) -> BreedDetailViewModel {
+        detailVms[breed.name, default: .init(breed: breed)]
+    }
+
     var title: String { "Woofly" }
     
 }

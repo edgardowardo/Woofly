@@ -4,7 +4,6 @@ import Playgrounds
 
 struct BreedsListView: View {
     @StateObject var vm: BreedsListViewModel
-    private var detailVms: [String: BreedDetailViewModel] = [:]
 
     init() {
         self._vm = StateObject(wrappedValue: .init(api: DogAPI()))
@@ -13,7 +12,7 @@ struct BreedsListView: View {
     var body: some View {
         NavigationView {
             List(vm.vms) { v in
-                NavigationLink(destination: BreedDetailView(vm: breedDetailViewModelFor(v.breed))) {
+                NavigationLink(destination: BreedDetailView(vm: vm.breedDetailViewModelFor(v.breed))) {
                     BreedItemView(vm: v)
                 }
             }            
@@ -24,9 +23,6 @@ struct BreedsListView: View {
         }
     }
     
-    private func breedDetailViewModelFor(_ breed: DogBreed) -> BreedDetailViewModel {
-        detailVms[breed.name, default: .init(breed: breed)]
-    }
     
     private func refresh() async {
         do {
