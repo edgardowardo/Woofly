@@ -9,7 +9,7 @@ class BreedsListViewModel: ObservableObject {
 
     private var api: DogAPIProviding
     
-    public init(api: DogAPIProviding = DogAPI()) {
+    init(api: DogAPIProviding = DogAPI()) {
         self.api = api
     }
     
@@ -21,7 +21,7 @@ class BreedsListViewModel: ObservableObject {
         } catch{
             vms = []
             isLoading = false
-            // throw error
+            // TODO: throw error
         }
     }
     
