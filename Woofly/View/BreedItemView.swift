@@ -17,6 +17,10 @@ struct BreedItemView: View {
                         .frame(width: 60, height: 60)
                         .clipShape(Circle())
                         .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+                        .shadow(radius: 10)
+                        .onAppear {
+                            imageCache[vm.breed.name] = image
+                        }
                 case .failure:
                     Image(systemName: "exclamationmark.circle")
                 @unknown default:
