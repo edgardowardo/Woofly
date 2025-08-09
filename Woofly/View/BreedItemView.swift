@@ -13,14 +13,17 @@ struct BreedItemView: View {
                 case .success(let image):
                     image
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
+                        .frame(width: 60, height: 60)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.gray, lineWidth: 1))
                 case .failure:
                     Image(systemName: "exclamationmark.circle")
                 @unknown default:
                     Image(systemName: "exclamationmark.circle.fill")
                 }
             }
-            .frame(width: 100, height: 100)
+            .frame(width: 60, height: 60)
                         
             Text(vm.displayName)
                 .font(.body)
