@@ -26,12 +26,9 @@ struct BreedItemView: View {
                 .font(.body)
                 .padding(.leading, vm.isIndented ? 16 : 0)
         }
-        .onAppear {
-            Task {
-                await refresh()
-            }
+        .task {
+            await refresh()
         }
-
     }
         
     private func refresh() async {

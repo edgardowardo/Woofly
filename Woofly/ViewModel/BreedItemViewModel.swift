@@ -16,7 +16,7 @@ class BreedItemViewModel: ObservableObject, Identifiable, BreedDisplayProviding 
     var isIndented: Bool { breed.base != nil }
     
     func fetchImage() async throws {
-        guard imageUrl == nil else { return }        
+        guard imageUrl == nil else { return }
         do {
             imageUrl = try await api.fetchImage(from: breed)
         } catch {
