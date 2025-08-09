@@ -1,16 +1,15 @@
 import SwiftUI
 import DogAPI
-import Playgrounds
 
 struct BreedItemView: View {
     @ObservedObject var vm: BreedItemViewModel
     
     var body: some View {
-        HStack(spacing: 8) {
+        HStack(spacing: 16) {
             AsyncImage(url: vm.imageUrl) { phase in
                 switch phase {
                 case .empty:
-                    Image(systemName: "arrow.2.circlepath.circle")
+                    ProgressView()
                 case .success(let image):
                     image
                         .resizable()
