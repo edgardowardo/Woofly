@@ -13,7 +13,7 @@ struct BreedsListView: View {
         NavigationView {
             List(vm.vms) { v in
                 NavigationLink(destination: BreedDetailView(vm: BreedDetailViewModel(breed: v.breed))) {
-                    BreedItemView(vm: .init(breed: v.breed))
+                    BreedItemView(vm: v)
                 }
             }            
             .navigationTitle(vm.title)
