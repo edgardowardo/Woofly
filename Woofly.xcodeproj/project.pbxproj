@@ -6,10 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		77B9038F2E4751EB00CF0CE7 /* DogAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 77B9038E2E4751EB00CF0CE7 /* DogAPI */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		77B903712E47519F00CF0CE7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -56,7 +52,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77B9038F2E4751EB00CF0CE7 /* DogAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +112,6 @@
 			);
 			name = Woofly;
 			packageProductDependencies = (
-				77B9038E2E4751EB00CF0CE7 /* DogAPI */,
 			);
 			productName = Woofly;
 			productReference = 77B903632E47519E00CF0CE7 /* Woofly.app */;
@@ -201,9 +195,6 @@
 			);
 			mainGroup = 77B9035A2E47519E00CF0CE7;
 			minimizedProjectReferenceProxies = 1;
-			packageReferences = (
-				77B9038D2E4751EB00CF0CE7 /* XCLocalSwiftPackageReference "../DogAPI" */,
-			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 77B903642E47519E00CF0CE7 /* Products */;
 			projectDirPath = "";
@@ -587,20 +578,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		77B9038D2E4751EB00CF0CE7 /* XCLocalSwiftPackageReference "../DogAPI" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../DogAPI;
-		};
-/* End XCLocalSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		77B9038E2E4751EB00CF0CE7 /* DogAPI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DogAPI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 77B9035B2E47519E00CF0CE7 /* Project object */;
 }
