@@ -3,7 +3,7 @@ import DogAPI
 import Playgrounds
 
 struct BreedsListView: View {
-    @StateObject var vm: BreedsListViewModel
+    @StateObject private var vm: BreedsListViewModel
 
     init() {
         self._vm = StateObject(wrappedValue: .init(api: DogAPI()))
@@ -19,16 +19,12 @@ struct BreedsListView: View {
             .navigationTitle(vm.title)
         }
         .task {
-            await refresh()
+            await vm.fetch()
         }
-    }
-    
-    
-    private func refresh() async {
-        do {
-            try await vm.fetch()
-        } catch {
-            // modal manager show error
+        .alert("Refresh Failed", isPresented: .constant(vm.refreshError != nil), presenting: vm.refreshError) { error in
+            Button("OK") { vm.refreshError = nil }
+        } message: { error in
+            Text(error.localizedDescription)
         }
     }
 }

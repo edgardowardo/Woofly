@@ -6,6 +6,7 @@ class BreedsListViewModel: ObservableObject {
     
     @Published var vms: [BreedItemViewModel] = []
     @Published var isLoading: Bool = false
+    @Published var refreshError: Error?
 
     var detailVms: [String: BreedDetailViewModel] = [:]
 
@@ -15,15 +16,14 @@ class BreedsListViewModel: ObservableObject {
         self.api = api
     }
     
-    func fetch() async throws {
+    func fetch() async {
         isLoading = true
         do {
             vms = try await api.fetchBreeds().map { .init(breed: $0) }
-
-        } catch{
+        } catch {
             vms = []
             isLoading = false
-            // TODO: throw error
+            refreshError = error
         }
     }
 

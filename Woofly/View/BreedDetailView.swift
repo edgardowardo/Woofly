@@ -14,7 +14,12 @@ struct BreedDetailView: View {
                 contentView(calculatedWidth)
             }
             .task {
-                await refresh()
+                await vm.fetch()
+            }
+            .alert("Refresh Failed", isPresented: .constant(vm.refreshError != nil), presenting: vm.refreshError) { error in
+                Button("OK") { vm.refreshError = nil }
+            } message: { error in
+                Text(error.localizedDescription)
             }
         }
     }
@@ -72,14 +77,6 @@ struct BreedDetailView: View {
                 Color.gray
                     .frame(width: width, height: height)
             }
-        }
-    }
-    
-    private func refresh() async {
-        do {
-            try await vm.fetch()
-        } catch {
-            // modal manager show error
         }
     }
 }

@@ -4,6 +4,7 @@ import DogAPI
 
 class BreedDetailViewModel: ObservableObject, BreedDisplayProviding {
     @Published var imageChunks: [[URL]]
+    @Published var refreshError: Error?
     let breed: DogBreed
     
     private var api: DogAPIProviding
@@ -14,12 +15,13 @@ class BreedDetailViewModel: ObservableObject, BreedDisplayProviding {
         imageChunks = []
     }
     
-    func fetch() async throws {
+    func fetch() async {
         do {
             let urls = try await api.fetchImages(from: breed, count: 10)
             imageChunks = chunkImages(urls)
         } catch {
             imageChunks = []
+            refreshError = error
         }
     }
     
