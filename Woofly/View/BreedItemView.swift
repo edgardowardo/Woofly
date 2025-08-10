@@ -40,7 +40,7 @@ struct BreedItemView: View {
         
     private func refresh() async {
         do {
-            try await vm.fetchImage()
+            try await vm.fetch()
         } catch {
             print("error fetching image")
         }
