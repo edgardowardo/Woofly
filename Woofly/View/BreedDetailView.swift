@@ -37,7 +37,7 @@ struct BreedDetailView: View {
             }
             
             Text(vm.breed.name.capitalized)
-                .font(.title)
+                .font(.title.bold())
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .padding(.bottom, 20)
