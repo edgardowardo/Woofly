@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77A173DA2E49140400D74E18 /* MockDogJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 77A173D92E49140400D74E18 /* MockDogJSON */; };
 		77B903CD2E4754DA00CF0CE7 /* DogAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 77B903CC2E4754DA00CF0CE7 /* DogAPI */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A173DA2E49140400D74E18 /* MockDogJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,12 +79,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77A173D82E49140400D74E18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		77B9035A2E47519E00CF0CE7 = {
 			isa = PBXGroup;
 			children = (
 				77B903652E47519E00CF0CE7 /* Woofly */,
 				77B903732E47519F00CF0CE7 /* WooflyTests */,
 				77B9037D2E47519F00CF0CE7 /* WooflyUITests */,
+				77A173D82E49140400D74E18 /* Frameworks */,
 				77B903642E47519E00CF0CE7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,6 +151,7 @@
 			);
 			name = WooflyTests;
 			packageProductDependencies = (
+				77A173D92E49140400D74E18 /* MockDogJSON */,
 			);
 			productName = WooflyTests;
 			productReference = 77B903702E47519F00CF0CE7 /* WooflyTests.xctest */;
@@ -203,6 +214,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				77B903CB2E4754DA00CF0CE7 /* XCRemoteSwiftPackageReference "DogAPI" */,
+				77A173D72E4913EA00D74E18 /* XCRemoteSwiftPackageReference "MockDogJSON" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 77B903642E47519E00CF0CE7 /* Products */;
@@ -589,6 +601,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		77A173D72E4913EA00D74E18 /* XCRemoteSwiftPackageReference "MockDogJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/edgardowardo/MockDogJSON.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		77B903CB2E4754DA00CF0CE7 /* XCRemoteSwiftPackageReference "DogAPI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:edgardowardo/DogAPI.git";
@@ -600,6 +620,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		77A173D92E49140400D74E18 /* MockDogJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77A173D72E4913EA00D74E18 /* XCRemoteSwiftPackageReference "MockDogJSON" */;
+			productName = MockDogJSON;
+		};
 		77B903CC2E4754DA00CF0CE7 /* DogAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 77B903CB2E4754DA00CF0CE7 /* XCRemoteSwiftPackageReference "DogAPI" */;

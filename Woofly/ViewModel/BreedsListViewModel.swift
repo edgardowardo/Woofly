@@ -8,8 +8,7 @@ class BreedsListViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var refreshError: Error?
 
-    var detailVms: [String: BreedDetailViewModel] = [:]
-
+    private var detailVms: [String: BreedDetailViewModel] = [:]
     private var api: DogAPIProviding
     
     init(api: DogAPIProviding = DogAPI()) {
@@ -20,6 +19,7 @@ class BreedsListViewModel: ObservableObject {
         isLoading = true
         do {
             vms = try await api.fetchBreeds().map { .init(breed: $0) }
+            isLoading = false
         } catch {
             vms = []
             isLoading = false
@@ -28,7 +28,13 @@ class BreedsListViewModel: ObservableObject {
     }
 
     func breedDetailViewModelFor(_ breed: DogBreed) -> BreedDetailViewModel {
-        detailVms[breed.name, default: .init(breed: breed)]
+        if let existing = detailVms[breed.name] {
+            return existing
+        } else {
+            let newVM = BreedDetailViewModel(breed: breed)
+            detailVms[breed.name] = newVM
+            return newVM
+        }
     }
 
     var title: String { "Woofly" }
