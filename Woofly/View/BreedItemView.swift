@@ -34,15 +34,7 @@ struct BreedItemView: View {
                 .padding(.leading, vm.isIndented ? 16 : 0)
         }
         .task {
-            await refresh()
-        }
-    }
-        
-    private func refresh() async {
-        do {
-            try await vm.fetch()
-        } catch {
-            print("error fetching image")
+            await vm.fetch()
         }
     }
 }

@@ -15,13 +15,13 @@ class BreedItemViewModel: ObservableObject, Identifiable, BreedDisplayProviding 
     
     var isIndented: Bool { breed.base != nil }
     
-    func fetch() async throws {
+    func fetch() async {
         guard imageUrl == nil else { return }
         do {
             imageUrl = try await api.fetchImage(from: breed)
         } catch {
             imageUrl = nil
-            throw error
+            print("error fetching image")
         }
     }
 }
