@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		77A173DA2E49140400D74E18 /* MockDogJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 77A173D92E49140400D74E18 /* MockDogJSON */; };
+		77A174A02E4A912B00D74E18 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 77A1749F2E4A912300D74E18 /* README.md */; };
 		77B903CD2E4754DA00CF0CE7 /* DogAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 77B903CC2E4754DA00CF0CE7 /* DogAPI */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		77A1749F2E4A912300D74E18 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		77B903632E47519E00CF0CE7 /* Woofly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woofly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B903702E47519F00CF0CE7 /* WooflyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WooflyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B9037A2E47519F00CF0CE7 /* WooflyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WooflyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +91,7 @@
 		77B9035A2E47519E00CF0CE7 = {
 			isa = PBXGroup;
 			children = (
+				77A1749F2E4A912300D74E18 /* README.md */,
 				77B903652E47519E00CF0CE7 /* Woofly */,
 				77B903732E47519F00CF0CE7 /* WooflyTests */,
 				77B9037D2E47519F00CF0CE7 /* WooflyUITests */,
@@ -233,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A174A02E4A912B00D74E18 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +430,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +463,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
