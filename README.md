@@ -8,7 +8,7 @@ Here is a quick video recording of the Woofly app in action. It shows all requir
 As per requirement, Woofly was built with two screens and with SwiftUI. It showcases a list of dog breeds retrieved from the [Dog CEO API](https://dog.ceo/dog-api/), allowing users to select a breed and view a collection of 10 random images for that breed. Sub breeds is out of scope. 
 
 ## Features
-- **Breed List Screen:** Fetches and displays all dog breeds in a scrollable list. It also shows a small thumbnail on the leading edge of the breed name.
+- **Breed List Screen:** Fetches and displays all dog breeds in a scrollable list. It also shows a small thumbnail which is reused as a hero image in the next screen.
 - **Breed Detail Screen:** Tapping a breed shows 10 random images of the selected breed. The layout of the images are in alternating chunks of 2 and 1 images per row. This is inspired form the Instagram app.  It also shows a hero image at the top of the list.
 - **Loading & Error Handling:** The UI reflects loading states and error messages.
 - **Mocking:** Shared mocks for consistent data in the main app and test targets.
@@ -21,7 +21,7 @@ As per requirement, Woofly was built with two screens and with SwiftUI. It showc
 - **SwiftUI First:** The app is written fully in SwiftUI for declarative, maintainable user interfaces, using idiomatic bindings and property wrappers (e.g., `@Published`, `@StateObject`).
 
 ## Testing & Mocking
-- **MockDogJSON:** Centralized struct containing JSON samples for breed lists and images, as well as negative test data. Used both in the main app unit tests, as well as the `DogAPI` unit tests package ensuring consistency.
+- **MockDogJSON:** Centralized struct containing JSON samples for breed lists and images, as well as negative test data. Used both in the main app unit tests, as well as the `DogAPI` unit tests package ensuring consistency and reusability.
 - **MockDogAPI:** Implements the `DogAPIProviding` protocol to deliver mock responses for all endpoints using data from `MockDogJSON`.
 - **Unit/UI Tests:** The project includes Swift Testing. Mocks can be swapped for real or test data as needed.
 
