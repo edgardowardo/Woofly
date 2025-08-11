@@ -10,7 +10,7 @@ struct BreedsListView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(vm.vms) { v in
                 NavigationLink(destination: BreedDetailView(vm: vm.breedDetailViewModelFor(v.breed))) {
                     BreedItemView(vm: v)
