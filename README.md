@@ -42,6 +42,17 @@ As per requirement, Woofly was built with two screens and with SwiftUI. It showc
 - **Architecture:**
   - Adopt Swift’s new features (like macros, InlineArray, etc.) where beneficial.
 
+## VIPER mapping  
+| VIPER Component | Codebase                                         |
+|-----------------|--------------------------------------------------|
+| View            | SwiftUI Views (BreedsListView, etc.)             |
+| Interactor      | DogAPI(fetch) + ViewModels (process data)        |
+| Presenter       | ViewModels (format data for display)             |
+| Entity          | Model structs/classes (e.g., DogBreed)           |
+| Router          | NavigationRouter + AppRoute enum                 |
+  
+  
+
 ## Conclusion
 Woofly is designed to be a clean, extensible foundation for any dog showcase app. The use of MVVM, protocol abstraction, and SwiftUI ensures maintainability and testability for future growth. I hope you like my code and allow me to join and contribute to Chip.
 
