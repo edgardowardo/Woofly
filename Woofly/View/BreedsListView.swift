@@ -40,3 +40,7 @@ struct BreedsListView: View {
         }
     }
 }
+
+#Preview {
+    BreedsListView()
+}
