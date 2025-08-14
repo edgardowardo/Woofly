@@ -80,3 +80,7 @@ struct BreedDetailView: View {
         }
     }
 }
+
+#Preview {
+    BreedDetailView(vm: BreedDetailViewModel(breed: DogBreed(name: "hound")))
+}
